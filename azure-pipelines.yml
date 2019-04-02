@@ -24,7 +24,7 @@ steps:
 
 - task: NuGetCommand@2
   inputs:
-    command: pack
+    command: restore
     packagesToPack: '**/*.csproj'
 
 - task: NuGetCommand@2
