@@ -18,7 +18,7 @@ variables:
 steps:
 - task: NuGetToolInstaller@0
 
-- task: NuGetCommand@1
+- task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
 
@@ -27,12 +27,12 @@ steps:
     command: restore
     packagesToPack: '**/*.csproj'
 
-- task: DotNetCoreCLI@3
+- task: DotNetCoreCLI@2
   inputs:
     command: pack
     configuration: release
 
-- task: NuGetCommand@3
+- task: NuGetCommand@2
   inputs:
     command: pack
     versioningScheme: byPrereleaseNumber
@@ -57,7 +57,7 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: 'publish artifacts'
 
-- task: NuGetCommand@4
+- task: NuGetCommand@2
   displayName: 'NuGet push'
   inputs:
     command: push
