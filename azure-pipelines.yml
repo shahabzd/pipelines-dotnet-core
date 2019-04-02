@@ -15,6 +15,11 @@ steps:
 - script: dotnet restore
   displayName: 'dotnet publish'
 
+- task: ndepend.ndependextension.ndepend-task.NDependTask@1
+  displayName: 'NDependTask '
+  env:
+   SYSTEM_ACCESSTOKEN: $(system.accesstoken)
+
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
 
