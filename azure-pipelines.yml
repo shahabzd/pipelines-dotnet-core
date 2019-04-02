@@ -27,11 +27,6 @@ steps:
     command: restore
     packagesToPack: '**/*.csproj'
 
-- task: DotNetCoreCLI@2
-  inputs:
-    command: pack
-    configuration: release
-
 - task: NuGetCommand@2
   inputs:
     command: pack
