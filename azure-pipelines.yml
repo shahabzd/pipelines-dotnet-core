@@ -29,7 +29,7 @@ steps:
 
 - task: DotNetCoreCLI@2
   inputs:
-    command: 'pack'
+    command: pack
     configuration: 'release'
 
 - task: NuGetCommand@2
@@ -56,10 +56,6 @@ steps:
 
 - task: PublishBuildArtifacts@1
   displayName: 'publish artifacts'
-
-
-
-
 
 - task: NuGetCommand@2
   displayName: 'NuGet push'
