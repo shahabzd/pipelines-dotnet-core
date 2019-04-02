@@ -29,14 +29,4 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: 'publish artifacts'
   
-- task: NuGetCommand@2
-  inputs:
-    command: pack
-    packagesToPack: '**/*.csproj'
 
-- task: NuGetCommand@2
-  displayName: 'NuGet push'
-  inputs:
-    command: push
-    publishVstsFeed: 'teamfeed'
-    allowPackageConflicts: true
